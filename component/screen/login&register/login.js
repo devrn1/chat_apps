@@ -92,10 +92,7 @@ class LoginScreen extends React.Component {
             justifyContent: 'center',
             alignItems: 'center'
           }}
-          source={{
-            uri:
-              'https://cdn.clipart.email/b2c82a893170af07075ea5dca5c1d3e7_blue2-images-blue-cloud-background-hd-wallpaper-and-background-_1920-986.jpeg'
-          }}
+          source={require('../../../asset/b2c82a893170af07075ea5dca5c1d3e7_blue2-images-blue-cloud-background-hd-wallpaper-and-background-_1920-986.jpeg')}
         >
           <Image
             style={{
@@ -111,10 +108,7 @@ class LoginScreen extends React.Component {
     }
     return (
       <ImageBackground
-        source={{
-          uri:
-            'https://cdn.clipart.email/b2c82a893170af07075ea5dca5c1d3e7_blue2-images-blue-cloud-background-hd-wallpaper-and-background-_1920-986.jpeg'
-        }}
+        source={require('../../../asset/b2c82a893170af07075ea5dca5c1d3e7_blue2-images-blue-cloud-background-hd-wallpaper-and-background-_1920-986.jpeg')}
         style={styleLogin.component}
       >
         <Modal visible={this.state.lottie} transparent={true}>
@@ -143,10 +137,7 @@ class LoginScreen extends React.Component {
             </View>
             <View style={styleLogin.rowIcon}>
               <Image
-                source={{
-                  uri:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIOh2b05mNpWmw9cKIZ_zIv2_lPoECw8wGOeCoCczaDl-y97nd&s'
-                }}
+                source={require('../../../asset/kunci.png')}
                 style={styleLogin.imageIcon}
               />
             </View>

@@ -120,16 +120,16 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    signingConfigs { //Tambahkan Ini
-        release { //Tambahkan Ini
-            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) { //Tambahkan Ini
-                storeFile file(MYAPP_UPLOAD_STORE_FILE) //Tambahkan Ini
-                storePassword MYAPP_UPLOAD_STORE_PASSWORD //Tambahkan Ini
-                keyAlias MYAPP_UPLOAD_KEY_ALIAS //Tambahkan Ini
-                keyPassword MYAPP_UPLOAD_KEY_PASSWORD //Tambahkan Ini
-            } //Tambahkan Ini
-        } //Tambahkan Ini
-    } //Tambahkan Ini
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
     splits {
         abi {
             reset()
@@ -154,7 +154,7 @@ android {
             // Caution! In production, you need to generate your own keystore file.
             // see https://facebook.github.io/react-native/docs/signed-apk-android.
             signingConfig signingConfigs.debug
-            signingConfig signingConfigs.release //Tambahkan Ini
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

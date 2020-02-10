@@ -6,7 +6,9 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
-  ImageBackground
+  ImageBackground,
+  ActivityIndicator,
+  Modal
 } from 'react-native'
 import { styleLogin } from './styles'
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -77,9 +79,7 @@ class RegisterScreen extends React.Component {
     console.disableYellowBox = true
     return (
       <ImageBackground
-        source={{
-          uri: 'https://cdn.clipart.email/b2c82a893170af07075ea5dca5c1d3e7_blue2-images-blue-cloud-background-hd-wallpaper-and-background-_1920-986.jpeg'
-        }}
+        source={require('../../../asset/b2c82a893170af07075ea5dca5c1d3e7_blue2-images-blue-cloud-background-hd-wallpaper-and-background-_1920-986.jpeg')}
         style={styleLogin.component}
       >
       <Modal visible={this.state.lottie} transparent={true}>
@@ -107,10 +107,7 @@ class RegisterScreen extends React.Component {
             </View>
             <View style={styleLogin.rowIcon}>
               <Image
-                source={{
-                  uri:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY4pI7eCz_RnMY8EpX58tJSn9ItW-sjppNtI6v39qSMm7tbpUU&s'
-                }}
+                source={require('../../../asset/images1.png')}
                 style={{
                   width: 60,
                   height: 60,
