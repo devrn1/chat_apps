@@ -127,7 +127,7 @@ class ChangePass extends React.Component {
           </View>
         </Modal>
         <View style={styleSettingPP.header}>
-          <TouchableOpacity onPress={()=>this.props.navigation.navigate('Setting')}>{arrow}</TouchableOpacity>
+          <TouchableOpacity onPress={()=>this.props.navigation.goBack()}>{arrow}</TouchableOpacity>
         </View>
         <View style={styleSettingPP.viewCard}>
           <View style={styleSettingPP.viewRow}>

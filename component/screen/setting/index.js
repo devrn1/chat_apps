@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import Icons from 'react-native-vector-icons/SimpleLineIcons'
 
 const arrow = <Icons name='arrow-left' size={25} style={{marginLeft:10}} />
-const exit = <Icon name='exit_to_app' size={30} style={{ marginRight: 5 }} />
+const exit = <Icon name='exit-to-app' color="red" size={30} style={{ marginRight: 5 }} />
 
 class SettingScreen extends React.Component {
   constructor (props) {
@@ -61,7 +61,7 @@ class SettingScreen extends React.Component {
     return (
       <View style={styleSetting.component}>
         <View style={styleSetting.header}>
-          <TouchableOpacity onPress={()=>this.props.navigation.navigate('Home')} style={{width:50}}>{arrow}</TouchableOpacity>
+          <TouchableOpacity onPress={()=>this.props.navigation.goBack()} style={{width:50}}>{arrow}</TouchableOpacity>
         </View>
         <View style={styleSetting.cardComponent}>
           <FlatList
@@ -75,11 +75,11 @@ class SettingScreen extends React.Component {
           <TouchableOpacity style={styleSetting.viewExit} onPress={this.exit}>
             {exit}
             <Text style={{ fontSize: 20, fontWeight: '500', color: 'red' }}>
-              Exit
+              logout
             </Text>
           </TouchableOpacity>
-          <Text>Chat App Beta.</Text>
-          <Text>@copyRight 2020 MyApp.co.id</Text>
+          <Text style={{color:"gray"}}>Chat App Beta.</Text>
+          <Text style={{color:"gray"}}>@copyRight 2020 MyApp.co.id</Text>
         </View>
       </View>
     )

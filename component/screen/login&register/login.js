@@ -79,10 +79,10 @@ class LoginScreen extends React.Component {
   }
   render () {
     const { PwwCondition } = this.state
-    console.disableYellowBox = true
+    // console.disableYellowBox = true
     setTimeout(() => {
       this.setState({ role: false })
-    }, 3000)
+    }, 5000)
     if (this.state.role) {
       return (
         <ImageBackground
@@ -121,7 +121,7 @@ class LoginScreen extends React.Component {
             }}
           >
           <View style={{width:100, height:100, backgroundColor:'#fff', justifyContent:'center', alignItems:'center', elevation:8}}>
-            <ActivityIndicator size="large" />
+          <ActivityIndicator size="large" color="green" />
             <Text style={{marginTop:5, fontSize:13}}>loading...</Text>
             </View>
           </View>
@@ -145,14 +145,14 @@ class LoginScreen extends React.Component {
           <TextInput
             style={styleLogin.textInputUser}
             placeholder='username'
-            selectionColor='000'
+            selectionColor='#000'
             onChangeText={text => this.setState({ username: text })}
           />
           <View style={styleLogin.ViewPass}>
             <TextInput
               style={styleLogin.textInputPass}
               placeholder='password'
-              selectionColor='000'
+              selectionColor='#000'
               onChangeText={text => this.setState({ password: text })}
               secureTextEntry={this.state.PwwCondition}
             />

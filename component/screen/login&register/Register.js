@@ -76,7 +76,7 @@ class RegisterScreen extends React.Component {
   //===============================render=====================================
   render () {
     const { PwwCondition } = this.state
-    console.disableYellowBox = true
+    // console.disableYellowBox = true
     return (
       <ImageBackground
         source={require('../../../asset/b2c82a893170af07075ea5dca5c1d3e7_blue2-images-blue-cloud-background-hd-wallpaper-and-background-_1920-986.jpeg')}
@@ -92,7 +92,7 @@ class RegisterScreen extends React.Component {
             }}
           >
           <View style={{width:100, height:100, backgroundColor:'#fff', justifyContent:'center', alignItems:'center', elevation:8}}>
-            <ActivityIndicator size="large" />
+            <ActivityIndicator size="large" color="green" />
             <Text style={{marginTop:5, fontSize:13}}>loading...</Text>
             </View>
           </View>

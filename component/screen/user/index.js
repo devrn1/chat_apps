@@ -45,7 +45,7 @@ class ProfileOrang extends React.Component {
         <View style={stylePP.header}>
           <View style={stylePP.cpHeader}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => this.props.navigation.goBack()}
             >
               {arrow}
             </TouchableOpacity>

@@ -177,7 +177,7 @@ class SetProfileScreen extends React.Component {
       <View style={stylePP.component}>
         <View style={stylePP.header}>
           <View style={stylePP.cpHeader}>
-            <TouchableOpacity onPress={()=>this.props.navigation.navigate('Setting')}>{arrow}</TouchableOpacity>
+            <TouchableOpacity onPress={()=>this.props.navigation.goBack()}>{arrow}</TouchableOpacity>
             <TouchableOpacity onPress={()=>this.props.navigation.navigate('SettingPP')}>{create}</TouchableOpacity>
           </View>
           <View style={stylePP.compoHeader}>{this.imageBG()}</View>

@@ -113,7 +113,7 @@ class HomeScreen extends React.Component {
 
   renderItem = ({ item }) => {
     return (
-      <View style={styleList.itemComponent}>
+      <View key={item.id} style={styleList.itemComponent}>
         <TouchableOpacity
           style={styleList.TouchImage}
           activeOpacity={0.7}
@@ -172,7 +172,7 @@ class HomeScreen extends React.Component {
 
   //search
   searchOrNo = () => {
-    this.setState({ searchOrNo: !this.state.searchOrNo })
+    this.setState({ searchOrNo: !this.state.searchOrNo, Data: this.arrayHolder})
     this._Start
   }
 
@@ -254,7 +254,8 @@ class HomeScreen extends React.Component {
     const { idDia, nama, no_telp, image, email } = this.state
     return (
       <View style={styleHome.component}>
-      <Modal visible={this.state.isLoading} transparent={true}>
+      {/* <Modal visible={this.state.isLoading} transparent={true}> */}
+      <Modal visible={false} transparent={true}>
           <View
             style={{
               width: '100%',
@@ -264,7 +265,7 @@ class HomeScreen extends React.Component {
             }}
           >
           <View style={{width:100, height:100, backgroundColor:'#fff', justifyContent:'center', alignItems:'center', elevation:8}}>
-            <ActivityIndicator size="large" />
+            <ActivityIndicator size="large" color="green"/>
             <Text style={{marginTop:5, fontSize:13}}>loading...</Text>
             </View>
           </View>
@@ -392,9 +393,7 @@ class HomeScreen extends React.Component {
         </Modal>
         {/* ==========modalImagePP========== */}
         <View style={styleHome.header}>
-          <View>
-            <Text style={styleHome.textTitle}>Chat App</Text>
-          </View>
+            {this.state.searchOrNo === false ? <Text style={styleHome.textTitle}>Chat App</Text> : null }
           {this.conditionSearch()}
         </View>
           <ScrollView style={styleHome.cardComponent1}>
@@ -403,8 +402,8 @@ class HomeScreen extends React.Component {
                 data={this.state.Data}
                 keyExtractor={index => index.toString()}
                 renderItem={this.renderItem}
-                onRefresh={this.getData}
-                refreshing={this.state.isLoading}
+                // onRefresh={this.getData}
+                // refreshing={this.state.isLoading}
               />
             </View>
           </ScrollView>

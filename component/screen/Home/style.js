@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
+
+const {width, height} = Dimensions.get('window')
 
 export const styleList = StyleSheet.create({
   component: {
@@ -111,7 +113,7 @@ export const styleHome = StyleSheet.create({
     
   },
   textTitle: {
-    fontSize: 18,
+    fontSize: height / 30,
     fontWeight: 'bold'
   },
   rowHeader: {
@@ -180,8 +182,8 @@ export const styleHome = StyleSheet.create({
   textInputSearch: {
     width: '85%',
     height: 40,
-    paddingHorizontal: 5,
-    fontSize: 15
+    paddingHorizontal: width / 50,
+    fontSize: height / 43
   },
   touchMPPD:{
       height:'100%',

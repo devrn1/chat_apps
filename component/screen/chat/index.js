@@ -102,7 +102,7 @@ class ChatScreen extends React.Component {
     })
       .then(res => {
         this.setState({
-          text: ""
+          textInput: ""
         })
         ToastAndroid.show('success', ToastAndroid.SHORT)
         this.getData()
@@ -119,7 +119,7 @@ class ChatScreen extends React.Component {
       <View style={{ width: '88%', flexDirection: 'row' }}>
         <TextInput
           placeholder='Type a message...'
-          value={this.state.text}
+          value={this.state.textInput}
           style={styleChat.textInput}
           onChangeText={data => this.setState({ textInput: data })}
           multiline={true}
@@ -154,7 +154,9 @@ class ChatScreen extends React.Component {
           }}
         >
           <TouchableOpacity
-            onPress={()=>this.ModalDelete(item)}
+            // onPress={()=>this.ModalDelete(item)}
+            onLongPress={()=>this.ModalDelete(item)}
+            delayLongPress={1000}
             style={{
               paddingHorizontal: 15,
               paddingVertical: 10,
@@ -365,7 +367,7 @@ class ChatScreen extends React.Component {
         <View style={styleChat.header}>
           <View style={styleChat.headerRow}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => this.props.navigation.goBack()}
             >
               {arrow}
             </TouchableOpacity>
